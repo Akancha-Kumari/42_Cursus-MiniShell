@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: akumari <akumari@student.hive.fi>          +#+  +:+       +#+         #
+#    By: AbhishekKumar <AbhishekKumar@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 10:20:03 by akumari           #+#    #+#              #
-#    Updated: 2024/11/15 13:06:34 by akumari          ###   ########.fr        #
+#    Updated: 2025/03/31 15:12:11 by AbhishekKum      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strle
 		ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c \
 		ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
 		ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+		ft_strndup.c
 
 BONUS_SRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 				ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
@@ -37,7 +38,7 @@ RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJS) 
+$(NAME): $(OBJS)
 	$(LIBC) $(NAME) $(OBJS)
 	ranlib $(NAME)
 
@@ -49,12 +50,12 @@ bonus: .bonus
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-	
-clean: 
+
+clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)
 	$(RM) .bonus
 
-fclean: clean 
+fclean: clean
 	$(RM) $(NAME) $(bonus)
 
 re: fclean all

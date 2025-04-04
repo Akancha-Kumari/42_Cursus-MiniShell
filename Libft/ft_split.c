@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akumari <akumari@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: AbhishekKumar <AbhishekKumar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:34:46 by akumari           #+#    #+#             */
-/*   Updated: 2024/11/14 10:48:53 by akumari          ###   ########.fr       */
+/*   Updated: 2025/03/31 15:12:53 by AbhishekKum      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strndup(const char *s, size_t n)
+char *ft_strndup(const char *s, size_t n)
 {
-	char	*dup;
-	size_t	i;
+	char *dup;
+	size_t i;
 
 	dup = (char *)malloc(n + 1);
 	if (dup == NULL)
@@ -30,9 +30,9 @@ static char	*ft_strndup(const char *s, size_t n)
 	return (dup);
 }
 
-static const char	*ft_find_next_word(const char *s, char c, int *len)
+static const char *ft_find_next_word(const char *s, char c, int *len)
 {
-	const char	*start;
+	const char *start;
 
 	while (*s && *s == c)
 		s++;
@@ -46,9 +46,9 @@ static const char	*ft_find_next_word(const char *s, char c, int *len)
 	return (start);
 }
 
-static void	ft_free_array(char **arr, int i)
+static void ft_free_array(char **arr, int i)
 {
-	int	j;
+	int j;
 
 	j = 0;
 	while (j < i)
@@ -59,11 +59,11 @@ static void	ft_free_array(char **arr, int i)
 	free(arr);
 }
 
-static char	**ft_split_words(const char *s, char c, char **arr)
+static char **ft_split_words(const char *s, char c, char **arr)
 {
-	int			i;
-	const char	*start;
-	int			len;
+	int i;
+	const char *start;
+	int len;
 
 	i = 0;
 	while (*s)
@@ -85,12 +85,12 @@ static char	**ft_split_words(const char *s, char c, char **arr)
 	return (arr);
 }
 
-char	**ft_split(char const *s, char c)
+char **ft_split(char const *s, char c)
 {
-	char		**arr;
-	size_t		count;
-	int			in_word;
-	char const	*str;
+	char **arr;
+	size_t count;
+	int in_word;
+	char const *str;
 
 	str = s;
 	count = 0;
